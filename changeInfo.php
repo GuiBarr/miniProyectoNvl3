@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Conectarse a la base de dayos
-require 'DB.php';
+require_once 'config\DB.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener las informaciones del usuário a partir del formulário
@@ -50,7 +50,7 @@ $userEmail = $userInfo['email'];
 </head>
 <body>
     <h1>Change Info</h1>
-    <form action="change_info.php" method="post">
+    <form action="changeInfo.php" method="post">
         <label for="new_name">Name:</label>
         <input type="text" name="new_name" id="new_name" value="<?php echo $userName; ?>" required><br><br>
 

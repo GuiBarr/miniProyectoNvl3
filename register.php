@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Conexión a la base de datos
-require 'DB.php'; 
+require 'config\DB.php'; 
 
 // Si el formulário de registro fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         // Insira o novo usuário no banco de dados
-        $query = "INSERT INTO users (email, password, name) VALUES (:email, :password, :name)";
+        $query = "INSERT INTO users (email, contrasena, name) VALUES (:email, :contrasena, :name)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':contrasena', $hashedPassword);
         $stmt->bindParam(':name', $name);
         $stmt->execute();
 
