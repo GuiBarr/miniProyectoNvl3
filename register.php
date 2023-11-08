@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $name = $_POST['name'];
 
+
     // Verifique se o email já está em uso
     $query = "SELECT id FROM users WHERE email = :email";
     $stmt = $pdo->prepare($query);

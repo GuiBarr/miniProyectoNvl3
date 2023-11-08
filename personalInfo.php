@@ -12,6 +12,11 @@ if(!isset($_SESSION['user_id'])) {
 //si está logado, se le muestra sus informaciones
 $userName = $_SESSION['user_name'];
 $userEmail = $_SESSION['user_email'];
+$userBio = $_SESSION['user_bio'];
+$userPhoto = $_SESSION['user_photo'];
+$userPhone = $_SESSION['user_phone'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +36,8 @@ $userEmail = $_SESSION['user_email'];
     
     <h4>PHOTO</h4>
     <h4>NAME <?php echo $userName; ?></h4>
-    <h4>BIO</h4>
-    <h4>PHONE</h4>
+    <h4>BIO <?php echo $userBio; ?></h4>
+    <h4>PHONE <?php echo $userPhone; ?></h4>
     <h4>EMAIL <?php echo $userEmail; ?></h4>
     <h4>PASSWORD</h4>
 

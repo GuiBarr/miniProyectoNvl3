@@ -1,34 +1,40 @@
 <?php
-//iniciar sesión
+// Iniciar sesión
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //conectarse a la base de datos
-    require 'login_db';
+    // Conectar-se ao banco de dados
+    require 'config\DB.php';
 
-    //obtener el email y contraseña del formulario
+    // Obter o email e senha do formulário
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    //consultar la database para obtener las credenciales del user
-    $query = "SELECT Id, Email, Contrasena, Name FROM users WHERE email = :email";
+    // Consultar o banco de dados para obter as credenciais do usuário
+    $query = "SELECT id, email, contrasena, name FROM users WHERE email = :email";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $user = $stmt->fetch();
 
-    //Verificar si el user existe y la contraseña es correcta
-    if($user && password_verify($password, $user['password'])) {
+    // Verificar se o usuário existe e a senha está correta
+    if ($user && password_verify($password, $user['contrasena'])) {
 
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_email'] = $user['email'];
         $_SESSION['user_name'] = $user['name'];
+        $_SESSION['user_bio'] = $user['bio'];
+        $_SESSION['user_phone'] = $user['phone'];
+        $_SESSION['user_photo'] = $user['photo'];
 
-        //Redirigir el usuario a la pagina de perfil
+    
+
+        // Redirecionar o usuário para a página de perfil
         header('Location: personalInfo.php');
         exit();
     } else {
-        $error_message = "Credenciales invalidas. Intentelo nuevamente.";
+        $error_message = "Credenciales inválidas. Inténtelo nuevamente.";
+        header("Location: index.php");
     }
 }
 ?>
