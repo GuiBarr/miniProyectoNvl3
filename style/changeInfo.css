@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.btn-back {
+    width: 420px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(47, 128, 237);
+    font-size: small;
+}
+
+.main-edit {
+    width:420px;
+    height: 460px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid  rgb(175, 175, 175);
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 50px;
+    padding-left: 25px;
+    padding-top: 10px;
+    
+}
+
+h1 {
+    font-size: medium;
+    margin-block-start: 1px;
+    margin-block-end: 1px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h4 {
+    font-size: x-small;
+    margin-block-start: 1px;
+    margin-block-end: 1px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.form {
+    height: 400px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    font-size: x-small;
+    color: black;
+}
+
+.input {
+    width: 250px;
+    padding: 7px 0px 7px 7px;
+    border-radius: 7px;
+    border: 1px solid rgb(190, 190, 190);
+    margin-bottom: 10px;
+}
+
+.bio {
+    width: 250px;
+    padding: 15px 0px 15px 7px;
+    border-radius: 7px;
+    border: 1px solid rgb(190, 190, 190);
+    margin-bottom: 10px;
+}
+
+.btn-save {
+    width: 50px;
+    color: white;
+    background-color: rgb(47, 128, 237);
+    border-radius: 5px;
+}
+
+
+
+
+
+

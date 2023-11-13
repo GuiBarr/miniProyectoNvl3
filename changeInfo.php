@@ -62,32 +62,53 @@ $userContrasena = $userInfo['contrasena'];
 <head>
     <title>Actualizar Informaciones</title>
     <!-- Adicione seus estilos CSS aqui -->
+    <link rel="stylesheet" href="style\changeInfo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+    <div class="btn-back">
+        <a href="personalInfo.php"> < Back </a>
+    </div>
+
+    <main class="main-edit">
+
+    <header>
+
     <h1>Change Info</h1>
-    <form action="changeInfo.php" method="post">
-        <label for="new_name">Name:</label>
-        <input type="text" name="new_name" id="new_name" value="<?php echo $userName; ?>" required><br><br>
+    <h4>Changes will be reflected to every services</h4>
 
-        <label for="new_email">Email:</label>
-        <input type="email" name="new_email" id="new_email" value="<?php echo $userEmail; ?>" required><br><br>
+    </header>
 
-        <label for="new_password">New Password:</label>
-        <input type="password" name="new_password" id="new_password" required><br><br>
+    <form class="form" action="changeInfo.php" method="post">
+        <label class="titulo" for="new_name">Name:</label>
+        <input class="input" type="text" name="new_name" id="new_name" value="<?php echo $userName; ?>" required>
 
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" name="confirm_password" id="confirm_password" required><br><br>
+        <label class="titulo" for="new_bio">Bio:</label>
+        <textarea class="bio" name="new_bio" id="new_bio"><?php echo $userBio; ?></textarea>
 
-        <label for="new_bio">Bio:</label>
-        <textarea name="new_bio" id="new_bio"><?php echo $userBio; ?></textarea><br><br>
+        <label class="titulo" for="new_phone">Phone:</label>
+        <input class="input" type="text" name="new_phone" id="new_phone" value="<?php echo $userPhone; ?>">
 
-        <label for="new_phone">Phone:</label>
-        <input type="text" name="new_phone" id="new_phone" value="<?php echo $userPhone; ?>"><br><br>
+        <label class="titulo" for="new_email">Email:</label>
+        <input class="input" type="email" name="new_email" id="new_email" value="<?php echo $userEmail; ?>" required>
 
-        <input type="submit" value="Save">
+        <label class="titulo" for="new_password">New Password:</label>
+        <input class="input" type="password" name="new_password" id="new_password" required>
+
+        <label class="titulo" for="confirm_password">Confirm Password:</label>
+        <input class="input" type="password" name="confirm_password" id="confirm_password" required>
+
+        <input class="btn-save" type="submit" value="Save">
+
     </form>
 
-    <a href="personalInfo.php">Regresar</a>
+    </main>
+
+    
 </body>
 </html>
 
