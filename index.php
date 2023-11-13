@@ -21,7 +21,7 @@ session_start();
 
     <header>
 
-    <img src="assets\devchallenges.svg" alt="devchallenes Icon" width="" height="">
+    <img src="assets\devchallenges.svg" alt="devchallenges Icon" width="" height="">
 
     <h1>Login</h1>
 
